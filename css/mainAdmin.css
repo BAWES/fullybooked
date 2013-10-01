@@ -1,0 +1,40 @@
+body{background:#f6f8e6;}
+
+#header{border-color:#D9F7D9;}
+
+#mainmenu ul li a:hover, #mainmenu ul li.active a{color:#687e2b;}
+
+#mainmenu ul li a:hover, #mainmenu ul li.active a{background:white !important;}
+
+a{color:#687e2b;}
+a:focus, a:hover {color:#b0be12;}
+
+.grid-view table.items th{background:url(bg.gif) !important;}
+.grid-view table.items tr.even
+{
+	background: #f9faf7 !important;
+}
+
+.grid-view table.items tr.odd
+{
+	background: #eef1e8 !important;
+}
+
+table.detail-view tr.odd{
+	background: #eef1e8 !important;
+}
+
+table.detail-view tr.even{
+	background: #f9faf7 !important;
+}
+
+.grid-view table.items th a{color:black !important;}
+.grid-view table.items th a:hover{color:#333 !important;}
+.grid-view table.items th{color:black !important;}
+
+.portlet-decoration{border-left:5px solid #687e2b !important; background:#9fb88a !important;}
+.portlet-title{color:black !important;}
+.portlet-content{background:#F9FAF7 !important;}
+
+.operations li a{color:#687E2B !important;}
+.operations li a:hover{background:#EEF1E8 !important; color:black !important;}

@@ -1,0 +1,11 @@
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule . index.php
+AuthType Basic
+AuthName "home"
+AuthUserFile "/home/fbooked/.htpasswds/public_html/passwd"
+require valid-user
