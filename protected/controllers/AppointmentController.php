@@ -358,31 +358,23 @@ class AppointmentController extends FController {
             $employee = Employee::model()->findByPk($_POST['employee_id']);
             $service = Service::model()->findByPk($_POST['service_id']);
             
-            error_log($_POST['date']);
-            
-            //Date we want to book at (fixing format for parsing first)
-            
-            //Current Date Format:
-            //Tue Jul 29 2014 00:00:00 GMT+0300 (Arab Standard Time)
-            //strtotime isn't working on it for some reason
-            
             $dateInput = strtotime($_POST['date']);
             $date = date('Y-m-d', $dateInput);
             
-            
             //Time we want to book at
             $starttime = strtotime($date . ' ' . $_POST['starttime']);
+            
+            error_log($dateInput." - ".$starttime);
 
             //Provider allowed start and end date
             $providerBookingStartDate = date('Y-m-d', strtotime($employee->provider->provider_booking_startdate));
             $providerBookingEndDate = date('Y-m-d', strtotime($employee->provider->provider_booking_enddate));
             
+            
             if ($providerBookingStartDate > date('Y-m-d', $starttime)) {
-                echo $dateInput." - ".$_POST['date']."<br>";
-                echo date('Y-m-d h:i a', $starttime);
                 echo 'Error: Booking for this provider hasn\'t started yet';
             } elseif ($providerBookingEndDate < date('Y-m-d', $starttime)) {
-                echo 'Error: Booking for this provider has already ended';
+                echo 'Error: Online booking for this provider has already ended on '.$providerBookingEndDate;
             } else {
 //            echo "Employee: $employee->employee_id, User: $user->user_id, Service: $service->service_id, Start: $starttime";
                 $appointment = new Appointment();
