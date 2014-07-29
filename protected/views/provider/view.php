@@ -23,7 +23,8 @@ $cs->registerScript('filter', "
         }
         var days= ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
         function didSelect(){
-            var currentDate = $( '#datepicker' ).datepicker( 'getDate' );
+            var currentDate = $( '#datepicker' ).datepicker( { dateFormat: 'yy-mm-dd' } ).val();
+            
             var today = new Date();
             today.setHours(0);
             today.setMinutes(0);
@@ -56,14 +57,17 @@ $cs->registerScript('filter', "
                     }});
             }
         }
+        
+        //initialize the datepicker
         $('#datepicker').datepicker({
             onSelect: function(){
                 didSelect();
-                
                 },
-            minDate: 0,    // this will be replaced with the ajax function call
-            maxDate: new Date('$model->provider_booking_enddate')
+            dateFormat: 'dd-mm-yy',
+            minDate: 0,
+            maxDate: new Date('".$model->provider_booking_enddate."')
         });
+        
         //Provider View Page Settings
         var locationLinks = $('#location a');
         locationLinks.click(function(){
@@ -72,7 +76,6 @@ $cs->registerScript('filter', "
 
             return false;
         });
-        $('#datepicker').datepicker();
 	"
         , CClientScript::POS_END);
 ?>

@@ -37,7 +37,9 @@ echo $output;
                 $('#dialog-confirm #d_employee').html(timeBlock.siblings('h3').html());
                 var emp_id = timeBlock.siblings('h3').attr('name');
                 var time = timeBlock.html();
-                var currentDate = $('#datepicker').datepicker('getDate');
+                
+                var currentDate = $( '#datepicker' ).datepicker( { dateFormat: 'yy-mm-dd' } ).val();
+                
                 if (!currentDate) {
                     currentDate = new Date().toDateString();
                 }

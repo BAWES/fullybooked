@@ -32,9 +32,7 @@ class ProviderController extends FController {
     }
 
     public function actionTimeTable($branchID, $serviceID, $_date = '') {
-        if (Yii::app()->user->isGuest) {
-            
-        } else {
+        if (!Yii::app()->user->isGuest) {
             $branchModel = Branch::model()->findByPk($branchID);
             $employees = array();
             foreach ($branchModel->employees as $employee) {
@@ -49,7 +47,7 @@ class ProviderController extends FController {
                     }
                 }
             }
-
+            
             if ($_date == '') {
                 $day = date('l');
                 $date = date('d/m/Y');

@@ -23,9 +23,9 @@
             <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/html5shiv.js"></script>
         <![endif]-->
 
-        <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery-1.8.3.min.js" type='text/javascript'></script>
+        <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery-1.11.1.min.js" type='text/javascript'></script>
         <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/khalidm.js" type='text/javascript'></script>
-        <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery-ui-1.10.1.custom.min.js" type='text/javascript'></script>
+        <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery-ui.js" type='text/javascript'></script>
         <title><?php echo CHtml::encode($this->pageTitle); ?></title>
     </head>
 

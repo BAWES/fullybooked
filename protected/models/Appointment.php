@@ -143,7 +143,6 @@ class Appointment extends CActiveRecord {
             }
         }
 
-
         if (date('l', strtotime($this->appointment_start_time)) == $this->employee->employee_dayoff) {
             //Checks if it's the employee's day off
             echo 'Error: Cannot book on employee\'s day off';

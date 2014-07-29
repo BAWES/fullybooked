@@ -152,7 +152,7 @@ class DefaultController extends Controller {
                 $appointment->appointment_start_time = date('Y-m-d H:i', $starttime);
                 $appointment->appointment_end_time = date('Y-m-d H:i', $starttime + 60 * $service->service_duration);
                 $appointment->appointment_source = 'provider';
-
+                
                 if ($appointment->save()) {
                     echo "
                 <p>
@@ -163,8 +163,9 @@ class DefaultController extends Controller {
                     <b>Appointment ID - $appointment->appointment_id</b>
                 </p>";
                 } else {
-//                echo 'Error saving appointment';
+    //                echo 'Error saving appointment';
                 }
+                
             }
 //            print_r($_POST);
         } else {

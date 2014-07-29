@@ -21,7 +21,8 @@ $cs->registerScript('start', "
         var days= ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
         var selectedService;
         function didSelect(){
-            var currentDate = $( '#datepicker' ).datepicker( 'getDate' );
+            var currentDate = $( '#datepicker' ).datepicker( { dateFormat: 'yy-mm-dd' } ).val();
+            
             var today = new Date();
             today.setHours(0);
             today.setMinutes(0);
