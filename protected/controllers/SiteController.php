@@ -146,7 +146,6 @@ class SiteController extends FController {
             $model->username = $u;
             $model->password = $p;
             $model->isEncrypted = true;
-
             if ($model->validate() && $model->login()) {
                 $this->redirect(array("user/view"));
             } else {
