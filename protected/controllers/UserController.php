@@ -162,8 +162,9 @@ class UserController extends FController {
 
         if (isset($_POST['User'])) {
             $model->attributes = $_POST['User'];
-            if ($model->save())
+            if ($model->save()){
                 $this->redirect(array('site/login', 'u' => $model->user_email, 'p' => $model->user_password));
+            }
         }
 
         $this->render('register', array(
